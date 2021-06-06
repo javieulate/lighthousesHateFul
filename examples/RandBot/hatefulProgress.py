@@ -4,17 +4,6 @@
 import random, sys, math
 import interface
 
-def chooseLighthouse(lighthouses, cx, cy):
-    betterManhattan = 9999
-    targetLh = lighthouses[0]
-    for lh in lighthouses:
-        xLh, yLh = lh["position"]
-        if lh["owner"] != self.player_num:
-            if betterManhattan != 0 and betterManhattan > max(abs(xLh-cx), abs(yLh-cy)):
-                betterManhattan = max(abs(xLh-cx), abs(yLh-cy))
-                targetLh = lh
-    return targetLh["position"]
-
 def aStar(start, goal, grid):
     return [[1,0]]
 
@@ -53,6 +42,16 @@ def getCloserToLighthouse(xLh, yLh, cx, cy):
             #return down
             return [0,-1]
 
+def chooseLighthouse(self, lighthouses, cx, cy):
+    betterManhattan = 9999
+    targetLh = lighthouses[0]
+    for lh in lighthouses:
+        xLh, yLh = lh["position"]
+        if lh["owner"] != self.player_num:
+            if betterManhattan != 0 and betterManhattan > max(abs(xLh-cx), abs(yLh-cy)):
+                betterManhattan = max(abs(xLh-cx), abs(yLh-cy))
+                targetLh = lh
+    return targetLh["position"]
 
 class RandBot(interface.Bot):
     """Bot que juega aleatoriamente."""
@@ -96,8 +95,7 @@ class RandBot(interface.Bot):
         for lh in state["lighthouses"]:
             allLh.append(lh)
         
-        #xLh, yLh = [0,0]
-        xLh, yLh = chooseLighthouse(allLh, cx, cy)
+        xLh, yLh = chooseLighthouse(self, allLh, cx, cy)
         #xLh, yLh = allLh[1]["position"]
         move = getCloserToLighthouse(xLh, yLh, cx, cy)
         return self.move(*move)

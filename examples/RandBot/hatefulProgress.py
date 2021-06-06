@@ -66,9 +66,7 @@ class RandBot(interface.Bot):
 
     def getCloserToLighthouseAux(target, cx,cy):
         if cx < target[0]:
-            if cy < target[1]:
-                #return upright
-                return [1,1]
+            return [1,1]
     def getCloserToLighthouse(target, cx, cy):
         if cx < target[0]:
             if cy < target[1]:

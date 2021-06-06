@@ -80,7 +80,7 @@ class RandBot(interface.Bot):
     def chooseLighthouse(lighthouses, cx, cy):
         betterManhattan = 9999
         targetLh = lighthouses[0]
-        for lh in lighthouses:
+        for lh in state["lighthouses"]:
             xLh, yLh = lh["position"]
             if lh["owner"] != self.player_num:
                 if betterManhattan != 0 and betterManhattan > math.max(math.abs(xLh-cx), math.abs(yLh-cy)):

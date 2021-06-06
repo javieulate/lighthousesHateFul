@@ -42,7 +42,6 @@ class RandBot(interface.Bot):
                 return self.attack(energy)
 
         target = [1,1]
-        print(target)
         move = [1,0]
         return self.move(*move)
 

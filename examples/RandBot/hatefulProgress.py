@@ -49,33 +49,7 @@ class RandBot(interface.Bot):
         #xLh, yLh = [0,0]
         #xLh, yLh = chooseLighthouse(allLh, cx, cy)
         xLh, yLh = allLh[0]["position"]
-        if cx < xLh:
-            if cy < yLh:
-                #return upright
-                move = [1,1]
-            if cy > yLh:
-                #return downright
-                move = [1,-1]
-            if cy == yLh:
-                #return right
-                move = [1,0]
-        if cx > xLh:
-            if cy < yLh:
-                #return upleft
-                move = [-1,1]
-            if cy > yLh:
-                #return downleft
-                move = [-1,-1]
-            if cy == yLh:
-                #return left
-                move = [-1,0]
-        if cx == xLh:
-            if cy < yLh:
-                #return up
-                move = [0,1]
-            if cy > yLh:
-                #return down
-                move = [0,-1]
+        move = getCloserToLighthouse(xLh, yLh, cx, cy)
         return self.move(*move)
 
     def chooseLighthouse(lighthouses, cx, cy):
@@ -98,32 +72,32 @@ class RandBot(interface.Bot):
                 return true
         return false
 
-    def getCloserToLighthouse(target, cx, cy):
-        if cx < target[0]:
-            if cy < target[1]:
+    def getCloserToLighthouse(xLh, yLh, cx, cy):
+        if cx < xLh:
+            if cy < yLh:
                 #return upright
                 return [1,1]
-            if cy > target[1]:
+            if cy > yLh:
                 #return downright
                 return [1,-1]
-            if cy == target[1]:
+            if cy == yLh:
                 #return right
                 return [1,0]
-        if cx > target[0]:
-            if cy < target[1]:
+        if cx > xLh:
+            if cy < yLh:
                 #return upleft
                 return [-1,1]
-            if cy > target[1]:
+            if cy > yLh:
                 #return downleft
                 return [-1,-1]
-            if cy == target[1]:
+            if cy == yLh:
                 #return left
                 return [-1,0]
-        if cx == target[0]:
-            if cy < target[1]:
+        if cx == xLh:
+            if cy < yLh:
                 #return up
                 return [0,1]
-            if cy > target[1]:
+            if cy > yLh:
                 #return down
                 return [0,-1]
 

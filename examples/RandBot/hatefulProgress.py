@@ -85,9 +85,10 @@ class RandBot(interface.Bot):
                     if possible_connections:
                         return self.connect(random.choice(possible_connections))
 
-                #Si no somos duenyos, conquistar
-            if lighthouses[(cx, cy)]["owner"] != self.player_num and energy != 0: 
-                return self.attack(energy)
+                # Probabilidad 60%: recargar el faro
+                if random.randrange(100) < 60:
+                    energy = random.randrange(state["energy"] + 1)
+                    return self.attack(energy)
 
         allLh = []
         move = [0,0]

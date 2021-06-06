@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-import random, sys
+import random, sys, math
 import interface
 
 class RandBot(interface.Bot):

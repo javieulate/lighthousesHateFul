@@ -48,7 +48,7 @@ def chooseLighthouse(self, lighthouses, cx, cy):
     for lh in lighthouses:
         xLh, yLh = lh["position"]
         if lh["owner"] != self.player_num:
-            if betterManhattan != 0 and betterManhattan > max(abs(xLh-cx), abs(yLh-cy)):
+            if max(abs(xLh-cx), abs(yLh-cy)) != 0 and betterManhattan > max(abs(xLh-cx), abs(yLh-cy)):
                 betterManhattan = max(abs(xLh-cx), abs(yLh-cy))
                 targetLh = lh
     return targetLh["position"]

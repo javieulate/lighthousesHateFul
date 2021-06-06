@@ -42,12 +42,11 @@ class RandBot(interface.Bot):
                 return self.attack(energy)
 
         allLh = []
-        target = [5,3]
         move = [0,0]
         for lh in state["lighthouses"]:
             allLh.append(lh)
         
-        xLh, yLh = allLh[0]["position"]
+        xLh, yLh = chooseLighthouse(allLh, cx, cy)
 
         if cx < xLh:
             if cy < yLh:
@@ -82,11 +81,12 @@ class RandBot(interface.Bot):
         betterManhattan = 9999
         targetLh = lighthouses[0]
         for lh in lighthouses:
+            xLh, yLh = lh["position"]
             if lh["owner"] != self.player_num:
-                if betterManhattan != 0 and betterManhattan > max(abs(lh["position"][0]-cx), abs(lh["position"][1]-cy)):
-                    betterManhattan = max(abs(lh["position"][0]-cx), abs(lh["position"][1]-cy))
+                if betterManhattan != 0 and betterManhattan > max(abs(xLh-cx), abs(yLh-cy)):
+                    betterManhattan = max(abs(xLh-cx), abs(yLh-cy))
                     targetLh = lh
-        return targetLh
+        return targetLh["position"]
 
     def aStar(start, goal, grid):
         return [[1,0]]

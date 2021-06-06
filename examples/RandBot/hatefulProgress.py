@@ -7,7 +7,7 @@ import interface
 def chooseLighthouse(lighthouses, cx, cy):
     betterManhattan = 9999
     targetLh = lighthouses[0]
-    for lh in state["lighthouses"]:
+    for lh in lighthouses:
         xLh, yLh = lh["position"]
         if lh["owner"] != self.player_num:
             if betterManhattan != 0 and betterManhattan > max(abs(xLh-cx), abs(yLh-cy)):
@@ -97,8 +97,8 @@ class RandBot(interface.Bot):
             allLh.append(lh)
         
         #xLh, yLh = [0,0]
-        #xLh, yLh = chooseLighthouse(allLh, cx, cy)
-        xLh, yLh = allLh[1]["position"]
+        xLh, yLh = chooseLighthouse(allLh, cx, cy)
+        #xLh, yLh = allLh[1]["position"]
         move = getCloserToLighthouse(xLh, yLh, cx, cy)
         return self.move(*move)
 

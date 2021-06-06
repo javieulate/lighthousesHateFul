@@ -41,7 +41,7 @@ class RandBot(interface.Bot):
                 energy = random.randrange(state["energy"] + 1)
                 return self.attack(energy)
 
-        target = [5,1]
+        target = [8,4]
         if cx < target[0]:
             if cy < target[1]:
                 #return upright

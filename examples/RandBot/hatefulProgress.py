@@ -43,10 +43,7 @@ class RandBot(interface.Bot):
 
         target = [1,1]
         print(target)
-        target2 = chooseLighthouse(allLh, cx, cy)
-        print(target2)
-        move = getCloserToLighthouse(target, cx, cy)
-        print(move)
+        move = [1,0]
         return self.move(*move)
 
     def chooseLighthouse(lighthouses, cx, cy):

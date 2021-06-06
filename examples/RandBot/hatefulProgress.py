@@ -42,36 +42,33 @@ class RandBot(interface.Bot):
                 return self.attack(energy)
 
         allLh = []
-        for lh in state["lighthouses"]:
-            allLh.append(lh)
+        target = [5,3]
 
-        target = chooseLighthouse(allLh, cx, cy)
-
-        if cx < target["position"][0]:
-            if cy < target["position"][1]:
+        if cx < target[0]:
+            if cy < target[1]:
                 #return upright
                 move = [1,1]
-            if cy > target["position"][1]:
+            if cy > target[1]:
                 #return downright
                 move = [1,-1]
-            if cy == target["position"][1]:
+            if cy == target[1]:
                 #return right
                 move = [1,0]
-        if cx > target["position"][0]:
-            if cy < target["position"][1]:
+        if cx > target[0]:
+            if cy < target[1]:
                 #return upleft
                 move = [-1,1]
-            if cy > target["position"][1]:
+            if cy > target[1]:
                 #return downleft
                 move = [-1,-1]
-            if cy == target["position"][1]:
+            if cy == target[1]:
                 #return left
                 move = [-1,0]
-        if cx == target["position"][0]:
-            if cy < target["position"][1]:
+        if cx == target[0]:
+            if cy < target[1]:
                 #return up
                 move = [0,1]
-            if cy > target["position"][1]:
+            if cy > target[1]:
                 #return down
                 move = [0,-1]
         return self.move(*move)

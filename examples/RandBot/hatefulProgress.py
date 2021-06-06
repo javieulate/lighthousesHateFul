@@ -46,6 +46,7 @@ class RandBot(interface.Bot):
         for lh in state["lighthouses"]:
             allLh.append(lh)
         
+        xLh, yLh = [0,0]
         xLh, yLh = chooseLighthouse(allLh, cx, cy)
         #xLh, yLh = allLh[0]["position"]
         if cx < xLh:

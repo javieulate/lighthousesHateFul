@@ -85,6 +85,7 @@ class RandBot(interface.Bot):
                     return self.connect(random.choice(possible_connections))
 
             #Si no somos duenyos, conquistar
+            energy = state["energy"]
             if lighthouses[(cx, cy)]["owner"] != self.player_num and energy != 0:
                 return self.attack(energy)
 

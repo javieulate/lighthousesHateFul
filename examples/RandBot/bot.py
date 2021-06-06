@@ -89,3 +89,5 @@ class Bot(object):
             "command": "connect",
             "destination": destination
         }
+
+        

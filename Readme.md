@@ -4,7 +4,7 @@ Bot realizado para la asignatura de Sistemas Inteligentes.
 ## Pasos para la ejecución
 1. Acceda a [Google Colaboratory](https://colab.research.google.com/notebooks/intro.ipynb#recent=true)
 2. Archivo - Abrir cuaderno - Desde Github. Introduzca el usuario y el nombre de este repositorio (javieulate/lighthousesHateFul) y seleccione el LaunchColab.ipynb
-![colab](https://raw.githubusercontent.com/javieulate/lighthousesHateFul/blob/master/colab.PNG)
+![colab](https://raw.githubusercontent.com/javieulate/lighthousesHateFul/master/colab.PNG)
 3. Una vez dentro del cuaderno, clique en Ejecutar todas las comandas dentro del Entorno de Ejecución.
 4. Disfrute de la partida. En la comanda %run engine/game_colab.py --fps 1 se podrá observar el tablero.
 5. Para cambiar de tablero, es posible modificar la comanda anterior añadiendo lo siguiente: --bots "maps/tablero.txt". Se puede modificar el tablero por las siguientes: grid (por defecto), grid2, island, square, square_l, square_mini y square_xl.

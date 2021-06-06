@@ -41,7 +41,13 @@ class RandBot(interface.Bot):
                 energy = random.randrange(state["energy"] + 1)
                 return self.attack(energy)
 
-        target = [8,4]
+        betterManhattan = 9999
+        target = lighthouses[0]
+        for lh in lighthouses:
+            if lh["owner"] != self.player_num:
+                if betterManhattan != 0 and betterManhattan > max(abs(lh["position"][0]-cx), abs(lh["position"][1]-cy)):
+                    betterManhattan = max(abs(lh["position"][0]-cx), abs(lh["position"][1]-cy))
+                    target = lh
         if cx < target[0]:
             if cy < target[1]:
                 #return upright

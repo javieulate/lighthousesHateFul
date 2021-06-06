@@ -41,7 +41,11 @@ class RandBot(interface.Bot):
                 energy = random.randrange(state["energy"] + 1)
                 return self.attack(energy)
 
-        target = chooseLighthouse(state["lighthouses"], cx, cy)
+        allLh = []
+        for lh in state["lighthouses"]:
+            allLh.append(lh)
+
+        target = chooseLighthouse(allLh, cx, cy)
 
         if cx < target["position"][0]:
             if cy < target["position"][1]:

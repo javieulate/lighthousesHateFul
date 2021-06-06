@@ -43,32 +43,37 @@ class RandBot(interface.Bot):
 
         allLh = []
         target = [5,3]
+        move = [0,0]
+        for lh in state["lighthouses"]:
+            allLh.append(lh)
+        
+        xLh, yLh = allLh[0]["position"]
 
-        if cx < target[0]:
-            if cy < target[1]:
+        if cx < xLh:
+            if cy < yLh:
                 #return upright
                 move = [1,1]
-            if cy > target[1]:
+            if cy > yLh:
                 #return downright
                 move = [1,-1]
-            if cy == target[1]:
+            if cy == yLh:
                 #return right
                 move = [1,0]
-        if cx > target[0]:
-            if cy < target[1]:
+        if cx > xLh:
+            if cy < yLh:
                 #return upleft
                 move = [-1,1]
-            if cy > target[1]:
+            if cy > yLh:
                 #return downleft
                 move = [-1,-1]
-            if cy == target[1]:
+            if cy == yLh:
                 #return left
                 move = [-1,0]
-        if cx == target[0]:
-            if cy < target[1]:
+        if cx == xLh:
+            if cy < yLh:
                 #return up
                 move = [0,1]
-            if cy > target[1]:
+            if cy > yLh:
                 #return down
                 move = [0,-1]
         return self.move(*move)

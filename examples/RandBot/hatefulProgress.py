@@ -14,12 +14,13 @@ class RandBot(interface.Bot):
         cx, cy = state["position"]
         lighthouses = dict((tuple(lh["position"]), lh)
                             for lh in state["lighthouses"])
-
+            allLh = []
+        for lh in state["lighthouses"]:
+            allLh.append(lh)
         # Si estamos en un faro...
         if (cx, cy) in lighthouses:
             # Probabilidad 60%: conectar con faro remoto válido
             if lighthouses[(cx, cy)]["owner"] == self.player_num:
-                if random.randrange(100) < 60:
                     possible_connections = []
                     for dest in lighthouses:
                         # No conectar con sigo mismo
@@ -36,18 +37,65 @@ class RandBot(interface.Bot):
                     if possible_connections:
                         return self.connect(random.choice(possible_connections))
 
-            # Probabilidad 60%: recargar el faro
-            if random.randrange(100) < 60:
-                energy = random.randrange(state["energy"] + 1)
+            #Si no somos duenyos, conquistar
+            if lighthouses[(cx, cy)]["owner"] != self.player_num:
                 return self.attack(energy)
-
-        # Mover aleatoriamente
-        moves = ((0,-1),(0,1))
-        # Determinar movimientos válidos
-        moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
-        move = random.choice(moves)
+        target = [1,1]
+        move = []
+        if isAStarPossible(allLh, cx, cy):
+            path = aStar([cx, cy], target, state["view"])
+            move = path[0]
+        else:
+            move = getCloserToLighthouse(target, cx, cy)
         return self.move(*move)
 
+    def chooseLighthouse(lighthouses, cx, cy):
+        betterManhattan = 9999
+        targetLh = lighthouses[0]
+        for lh in lighthouses:
+            if lh["owner"] != self.player_num:
+                if betterManhattan != 0 and betterManhattan > max(abs(lh["position"][0]-cx), abs(lh["position"][1]-cy)):
+                    betterManhattan = max(abs(lh["position"][0]-cx), abs(lh["position"][1]-cy))
+                    targetLh = lh
+        return targetLh
+
+    def aStar(start, goal, grid):
+        return [[1,0]]
+
+    def isAStarpossible(lighthouses, cx, cy):
+        for lh in lighthouses:
+            if(max(abs(lh["position"][0]-cx), abs(lh["position"][1]-cy)<=3)):
+                return true
+        return false
+
+    def getCloserToLighthouse(target, cx, cy):
+        if cx < target[0]:
+            if cy < target[1]:
+                #return upright
+                return [1,1]
+            if cy > target[1]:
+                #return downright
+                return [1,-1]
+            if cy == target[1]:
+                #return right
+                return [1,0]
+        if cx > target[0]:
+            if cy < target[1]:
+                #return upleft
+                return [-1,1]
+            if cy > target[1]:
+                #return downleft
+                return [-1,-1]
+            if cy == target[1]:
+                #return left
+                return [-1,0]
+        if cx == target[0]:
+            if cy < target[1]:
+                #return up
+                return [0,1]
+            if cy > target[1]:
+                #return down
+                return [0,-1]
 if __name__ == "__main__":
     iface = interface.Interface(RandBot)
     iface.run()

@@ -14,7 +14,7 @@ class HatefulBot(interface.Bot):
         cx, cy = state["position"]
         lighthouses = dict((tuple(lh["position"]), lh)
                             for lh in state["lighthouses"])
-        allLh = []
+            allLh = []
         for lh in state["lighthouses"]:
             allLh.append(lh)
 

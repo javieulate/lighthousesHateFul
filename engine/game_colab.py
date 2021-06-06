@@ -17,7 +17,7 @@ from IPython.display import clear_output
 parser = argparse.ArgumentParser(description='LightHouses AI Contest')
 parser.add_argument('-fps', '--fps', type=int, required=False, default=20, help='FPS value to use to display game')
 parser.add_argument('-map', '--map', type=str, required=False, default="maps/grid.txt", help='Map file to be used')
-parser.add_argument('-bots', '--bots', type=str, nargs='+', required=False, default = ['python examples/RandBot/hateful.py'], help='Bots to play with :) ')
+parser.add_argument('-bots', '--bots', type=str, nargs='+', required=False, default = ['python examples/RandBot/hatefulBot.py'], help='Bots to play with :) ')
 args = parser.parse_args()
 
 cfg_file = args.map

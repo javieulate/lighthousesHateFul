@@ -44,8 +44,13 @@ class RandBot(interface.Bot):
         allLh = []
         for lh in state["lighthouses"]:
             allLh.append(lh)
-            
-        target = [8,4]
+            betterManhattan = 9999
+            target = [0,0]
+            if lh["owner"] != self.player_num:
+                if betterManhattan != 0 and betterManhattan > max(abs(lh["position"][0]-cx), abs(lh["position"][1]-cy)):
+                    betterManhattan = max(abs(lh["position"][0]-cx), abs(lh["position"][1]-cy))
+                    target = lh
+                    
         if cx < target[0]:
             if cy < target[1]:
                 #return upright

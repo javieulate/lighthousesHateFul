@@ -42,11 +42,14 @@ class RandBot(interface.Bot):
                 return self.attack(energy)
 
         allLh = []
+        target = [0,0]
+        betterManhattan = 9999
         for lh in state["lighthouses"]:
-            allLh.append(lh)
-            betterManhattan = 9999
-            target = [0,0]
-
+            allLh.append(lh)  
+            if betterManhattan > max(abs(lh["position"][0]-cx), abs(lh["position"][1]-cy):
+                betterManhattan = max(abs(lh["position"][0]-cx), abs(lh["position"][1]-cy)
+                target = lh
+                
         if cx < target[0]:
             if cy < target[1]:
                 #return upright

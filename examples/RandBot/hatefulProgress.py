@@ -48,7 +48,7 @@ class RandBot(interface.Bot):
         
         #xLh, yLh = [0,0]
         #xLh, yLh = chooseLighthouse(allLh, cx, cy)
-        xLh, yLh = allLh[0]["position"]
+        xLh, yLh = allLh[1]["position"]
         move = getCloserToLighthouse(xLh, yLh, cx, cy)
         return self.move(*move)
 

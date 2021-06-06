@@ -14,13 +14,12 @@ class RandBot(interface.Bot):
         cx, cy = state["position"]
         lighthouses = dict((tuple(lh["position"]), lh)
                             for lh in state["lighthouses"])
-            allLh = []
-        for lh in state["lighthouses"]:
-            allLh.append(lh)
+
         # Si estamos en un faro...
         if (cx, cy) in lighthouses:
             # Probabilidad 60%: conectar con faro remoto válido
             if lighthouses[(cx, cy)]["owner"] == self.player_num:
+                if random.randrange(100) < 60:
                     possible_connections = []
                     for dest in lighthouses:
                         # No conectar con sigo mismo
@@ -37,16 +36,14 @@ class RandBot(interface.Bot):
                     if possible_connections:
                         return self.connect(random.choice(possible_connections))
 
-            #Si no somos duenyos, conquistar
-            if lighthouses[(cx, cy)]["owner"] != self.player_num:
+            # Probabilidad 60%: recargar el faro
+            if random.randrange(100) < 60:
+                energy = random.randrange(state["energy"] + 1)
                 return self.attack(energy)
+
         target = [1,1]
         move = []
-        if isAStarPossible(allLh, cx, cy):
-            path = aStar([cx, cy], target, state["view"])
-            move = path[0]
-        else:
-            move = getCloserToLighthouse(target, cx, cy)
+        move = getCloserToLighthouse(target, cx, cy)
         return self.move(*move)
 
     def chooseLighthouse(lighthouses, cx, cy):

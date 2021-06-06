@@ -83,8 +83,8 @@ class RandBot(interface.Bot):
         for lh in state["lighthouses"]:
             xLh, yLh = lh["position"]
             if lh["owner"] != self.player_num:
-                if betterManhattan != 0 and betterManhattan > math.max(math.abs(xLh-cx), math.abs(yLh-cy)):
-                    betterManhattan = math.max(math.abs(xLh-cx), math.abs(yLh-cy))
+                if betterManhattan != 0 and betterManhattan > max(abs(xLh-cx), abs(yLh-cy)):
+                    betterManhattan = max(abs(xLh-cx), abs(yLh-cy))
                     targetLh = lh
         return targetLh["position"]
 
@@ -93,13 +93,10 @@ class RandBot(interface.Bot):
 
     def isAStarpossible(lighthouses, cx, cy):
         for lh in lighthouses:
-            if(math.max(math.abs(lh["position"][0]-cx), math.abs(lh["position"][1]-cy)<=3)):
+            if(max(abs(lh["position"][0]-cx), abs(lh["position"][1]-cy)<=3)):
                 return true
         return false
 
-    def getCloserToLighthouseAux(target, cx,cy):
-        if cx < target[0]:
-            return [1,1]
     def getCloserToLighthouse(target, cx, cy):
         if cx < target[0]:
             if cy < target[1]:

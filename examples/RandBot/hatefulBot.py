@@ -19,52 +19,52 @@ def getCloserToLighthouse(self, state, xLh, yLh, cx, cy):
     if cx < xLh:
         if cy < yLh:
             #return upright
-            if state["view"][2][4] != -1:
+            if (1,1) in moves:
                 return [1,1]
             else 
                 return random.choice(moves)
         if cy > yLh:
             #return downright
-            if state["view"][4][4] != -1:
+            if (1,-1) in moves:
                 return [1,-1]
             else 
                 return random.choice(moves)
         if cy == yLh:
             #return right
-            if state["view"][3][4] != -1:
+            if (1,0) in moves:
                 return [1,0]
             else 
                 return random.choice(moves)
     if cx > xLh:
         if cy < yLh:
             #return upleft
-            if state["view"][2][2] != -1:
+            if (-1,1) in moves:
                 return [-1,1]
             else 
                 return random.choice(moves)
         if cy > yLh:
             #return downleft
-            if state["view"][4][2] != -1:
+            if (-1,-1) in moves:
                 return [-1,-1]
             else 
                 return random.choice(moves)
         if cy == yLh:
             #return left
-            if state["view"][3][2] != -1:
+            if (-1,0) in moves:
                 return [-1,0]
             else 
                 return random.choice(moves)
     if cx == xLh:
         if cy < yLh:
             #return up
-            if state["view"][2][3] != -1:
+            if (0,1) in moves:
                 return [0,1]
             else 
                 return random.choice(moves)
         if cy > yLh:
             #return down
             return [0,-1]
-            if state["view"][4][3] != -1:
+            if (0,-1) in moves:
                 return [0,-1]
             else 
                 return random.choice(moves)

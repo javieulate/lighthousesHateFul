@@ -13,7 +13,7 @@ def isAStarpossible(lighthouses, cx, cy):
             return true
     return false
 
-def getCloserToLighthouse(xLh, yLh, cx, cy):
+def getCloserToLighthouse(state, xLh, yLh, cx, cy):
     moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
     moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
     if cx < xLh:
@@ -122,7 +122,7 @@ class RandBot(interface.Bot):
             allLh.append(lh)
         
         xLh, yLh = chooseLighthouse(self, allLh, cx, cy)
-        move = getCloserToLighthouse(xLh, yLh, cx, cy)
+        move = getCloserToLighthouse(state, xLh, yLh, cx, cy)
         return self.move(*move)
 
 if __name__ == "__main__":

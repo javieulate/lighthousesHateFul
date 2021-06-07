@@ -21,7 +21,9 @@ Bot realizado para la asignatura de Sistemas Inteligentes, asignatura impartida 
 - square_xl
 
 ## Demo
-En el siguiente [enlace](https://drive.google.com/file/d/1Kd0zmj9b111AWHEKkxM_p8Th56W3cGc0/view?usp=sharing) se puede ver un vídeo en el que se muestra el comportamiento del bot implementado (hatefulBot, en azul) en comparación a un bot que se mueve aleatoriamente (randbot, en rojo).
+Para mostrar el funcionamiento del bot se han elaborado dos breves demos. En ambos casos, se mostrará el bot implementado (hatefulBot, en azul) en comparación a un bot que se mueve aleatoriamente (randbot, en rojo):
+- [Enlace de la demo](https://drive.google.com/file/d/1wD962fwekU0qPq6KibSI7G7r9I2GM8KH/view?usp=sharing) para el tablero Grid (por defecto).
+- [Enlace de la demo](https://drive.google.com/file/d/1w8snhIUTBZIGTyiWuE0gn30XKZA73XDf/view?usp=sharing) para el tablero Island.
 
 ## Documentación
 

@@ -42,7 +42,7 @@ class RandBot(interface.Bot):
                 return self.attack(energy)
 
         # Mover aleatoriamente
-        moves = ((0,-1),(0,1))
+        moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
         # Determinar movimientos válidos
         moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
         move = random.choice(moves)

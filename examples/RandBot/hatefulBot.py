@@ -53,9 +53,9 @@ def chooseLighthouse(self, lighthouses, cx, cy):
                 targetLh = lh
     return targetLh["position"]
 
-class RandBot(interface.Bot):
-    """Bot que juega aleatoriamente."""
-    NAME = "RandBot"
+class HatefulBot(interface.Bot):
+    """Bot que juega utilizando la distancia betterManhattan."""
+    NAME = "HatefulBot"
 
     def play(self, state):
         """Jugar: llamado cada turno.
@@ -97,8 +97,9 @@ class RandBot(interface.Bot):
         xLh, yLh = chooseLighthouse(self, allLh, cx, cy)
         move = getCloserToLighthouse(xLh, yLh, cx, cy)
         moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
-        # Determinar movimientos válidos
+        # Determinar movimientos validos
         moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
+        # Comprobacion para que no se quede atascado el bot
         if tuple(move) not in moves:     
             move = random.choice(moves) 
 

@@ -53,9 +53,9 @@ def chooseLighthouse(self, lighthouses, cx, cy):
                 targetLh = lh
     return targetLh["position"]
 
-class RandBot(interface.Bot):
+class HatefulBot(interface.Bot):
     """Bot que juega utilizando la distancia betterManhattan."""
-    NAME = "RandBot"
+    NAME = "HatefulBot"
 
     def play(self, state):
         """Jugar: llamado cada turno.
@@ -106,5 +106,5 @@ class RandBot(interface.Bot):
         return self.move(*move)
 
 if __name__ == "__main__":
-    iface = interface.Interface(RandBot)
+    iface = interface.Interface(HatefulBot)
     iface.run()

@@ -1,5 +1,6 @@
 # The Hateful Bot
 Bot realizado para la asignatura de Sistemas Inteligentes.
+![thehateFulBot](https://raw.githubusercontent.com/javieulate/lighthousesHateFul/master/thehateFulBot.PNG)
 
 ## Pasos para la ejecución
 1. Acceda a [Google Colaboratory](https://colab.research.google.com/notebooks/intro.ipynb#recent=true)
@@ -7,10 +8,21 @@ Bot realizado para la asignatura de Sistemas Inteligentes.
 ![colab](https://raw.githubusercontent.com/javieulate/lighthousesHateFul/master/colab.PNG)
 3. Una vez dentro del cuaderno, clique en Ejecutar todas las comandas dentro del Entorno de Ejecución.
 4. Disfrute de la partida. En la comanda %run engine/game_colab.py --fps 1 se podrá observar el tablero.
-5. Para cambiar de tablero, es posible modificar la comanda anterior añadiendo lo siguiente: --bots "maps/tablero.txt". Se puede modificar el tablero por las siguientes: grid (por defecto), grid2, island, square, square_l, square_mini y square_xl.
+5. Para cambiar de tablero, es posible modificar la comanda anterior añadiendo lo siguiente: --bots "maps/tablero.txt". Se puede modificar el tablero por las siguientes: 
+- grid (por defecto)
+- grid2
+- island
+- square
+- square_l
+- square_mini
+- square_xl
 
 ## Demo
 En el siguiente [enlace](https://drive.google.com/file/d/1qoWKu9wkKlKaZ6XxCik-LM29jASG4B8F/view?usp=sharing) se puede ver un vídeo en el que se muestra el comportamiento del bot implementado.
+
+## Documentación
+
+Para acceder a una documentación explayada acerca del bot implementado pinche [aquí](https://raw.githubusercontent.com/javieulate/lighthousesHateFul/master/Entrega Final - LightHouses - The Hateful Four.pdf)
 
 ## Contribuidores
 

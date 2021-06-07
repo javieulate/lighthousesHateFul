@@ -21,7 +21,7 @@ Bot realizado para la asignatura de Sistemas Inteligentes, asignatura impartida 
 - square_xl
 
 ## Demo
-En el siguiente [enlace](https://drive.google.com/file/d/1qoWKu9wkKlKaZ6XxCik-LM29jASG4B8F/view?usp=sharing) se puede ver un vídeo en el que se muestra el comportamiento del bot implementado.
+En el siguiente [enlace](https://drive.google.com/file/d/1Kd0zmj9b111AWHEKkxM_p8Th56W3cGc0/view?usp=sharing) se puede ver un vídeo en el que se muestra el comportamiento del bot implementado (hatefulBot, en azul) en comparación a un bot que se mueve aleatoriamente (randbot, en rojo).
 
 ## Documentación
 

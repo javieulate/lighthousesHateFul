@@ -99,7 +99,7 @@ class RandBot(interface.Bot):
         moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
         # Determinar movimientos válidos
         moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
-        if move not in moves:     
+        if tuple(move) not in moves:     
             move = random.choice(moves) 
 
         return self.move(*move)

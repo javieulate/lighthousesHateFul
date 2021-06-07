@@ -1,6 +1,6 @@
 # The Hateful Bot
 Bot realizado para la asignatura de Sistemas Inteligentes.
-![thehateFulBot](https://raw.githubusercontent.com/javieulate/lighthousesHateFul/master/thehateFulBot.PNG)
+![thehateFulBot](https://raw.githubusercontent.com/javieulate/lighthousesHateFul/master/thehateFulBot.png)
 
 ## Pasos para la ejecución
 1. Acceda a [Google Colaboratory](https://colab.research.google.com/notebooks/intro.ipynb#recent=true)
@@ -22,7 +22,7 @@ En el siguiente [enlace](https://drive.google.com/file/d/1qoWKu9wkKlKaZ6XxCik-LM
 
 ## Documentación
 
-Para acceder a una documentación explayada acerca del bot implementado pinche [aquí](https://raw.githubusercontent.com/javieulate/lighthousesHateFul/master/Entrega Final - LightHouses - The Hateful Four.pdf)
+Para acceder a una documentación explayada acerca del bot implementado pinche [aquí](https://raw.githubusercontent.com/javieulate/lighthousesHateFul/master/Entrega%20Final%20-%20LightHouses%20-%20The%20Hateful%20Four.pdf)
 
 ## Contribuidores
 

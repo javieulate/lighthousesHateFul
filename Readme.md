@@ -1,7 +1,9 @@
 # The Hateful Bot
 Bot realizado para la asignatura de Sistemas Inteligentes, asignatura impartida por Iñigo López-Gazpio en la Universidad de Deusto.
 
-![thehateFulBot](https://raw.githubusercontent.com/javieulate/lighthousesHateFul/master/thehateFulBot.png)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/javieulate/lighthousesHateFul/master/thehateFulBot.png?raw=true alt="thehateFulBot"/>
+</p>
 
 ## Pasos para la ejecución
 1. Acceda a [Google Colaboratory](https://colab.research.google.com/notebooks/intro.ipynb#recent=true)

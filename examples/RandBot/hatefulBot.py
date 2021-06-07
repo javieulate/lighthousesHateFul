@@ -42,8 +42,6 @@ def getCloserToLighthouse(xLh, yLh, cx, cy):
             #return down
             return [0,-1]
 
-    return [2,2]
-
 def chooseLighthouse(self, lighthouses, cx, cy):
     betterManhattan = 9999
     targetLh = lighthouses[0]
@@ -98,12 +96,12 @@ class RandBot(interface.Bot):
         
         xLh, yLh = chooseLighthouse(self, allLh, cx, cy)
         move = getCloserToLighthouse(xLh, yLh, cx, cy)
-        if move == [2,2]:
-            moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
-            # Determinar movimientos válidos
-            moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
+        moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
+        # Determinar movimientos válidos
+        moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
+        if move not in moves:     
             move = random.choice(moves) 
-            
+
         return self.move(*move)
 
 if __name__ == "__main__":

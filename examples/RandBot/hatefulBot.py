@@ -17,30 +17,79 @@ def getCloserToLighthouse(xLh, yLh, cx, cy):
     if cx < xLh:
         if cy < yLh:
             #return upright
-            return [1,1]
+            if state["map"][1,1] = 1:
+                return [1,1]
+            else 
+                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
+                # Determinar movimientos válidos
+                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
+                return random.choice(moves)
         if cy > yLh:
             #return downright
-            return [1,-1]
+            if state["map"][1,-1] = 1:
+                return [1,-1]
+            else 
+                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
+                # Determinar movimientos válidos
+                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
+                return random.choice(moves)
         if cy == yLh:
             #return right
-            return [1,0]
+            if state["map"][1,0] = 1:
+                return [1,0]
+            else 
+                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
+                # Determinar movimientos válidos
+                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
+                return random.choice(moves)
     if cx > xLh:
         if cy < yLh:
             #return upleft
-            return [-1,1]
+            if state["map"][-1,1] = 1:
+                return [-1,1]
+            else 
+                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
+                # Determinar movimientos válidos
+                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
+                return random.choice(moves)
         if cy > yLh:
             #return downleft
-            return [-1,-1]
+            if state["map"][-1,-1] = 1:
+                return [-1,-1]
+            else 
+                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
+                # Determinar movimientos válidos
+                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
+                return random.choice(moves)
         if cy == yLh:
             #return left
-            return [-1,0]
+            if state["map"][-1,0] = 1:
+                return [-1,0]
+            else 
+                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
+                # Determinar movimientos válidos
+                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
+                return random.choice(moves)
     if cx == xLh:
         if cy < yLh:
             #return up
-            return [0,1]
+            if state["map"][0,1] = 1:
+                return [0,1]
+            else 
+                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
+                # Determinar movimientos válidos
+                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
+                return random.choice(moves)
         if cy > yLh:
             #return down
             return [0,-1]
+            if state["map"][0,-1] = 1:
+                return [0,-1]
+            else 
+                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
+                # Determinar movimientos válidos
+                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
+                return random.choice(moves)
 
 def chooseLighthouse(self, lighthouses, cx, cy):
     betterManhattan = 9999

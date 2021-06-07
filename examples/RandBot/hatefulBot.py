@@ -13,60 +13,36 @@ def isAStarpossible(lighthouses, cx, cy):
             return true
     return false
 
-def getCloserToLighthouse(self, state, xLh, yLh, cx, cy):
-    moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
-    moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
+def getCloserToLighthouse(xLh, yLh, cx, cy):
     if cx < xLh:
         if cy < yLh:
             #return upright
-            if [1,1] in moves:
-                return [1,1]
-            else 
-                return random.choice(moves)
+            return [1,1]
         if cy > yLh:
             #return downright
-            if [1,-1] in moves:
-                return [1,-1]
-            else 
-                return random.choice(moves)
+            return [1,-1]
         if cy == yLh:
             #return right
-            if [1,0] in moves:
-                return [1,0]
-            else 
-                return random.choice(moves)
+            return [1,0]
     if cx > xLh:
         if cy < yLh:
             #return upleft
-            if [-1,1] in moves:
-                return [-1,1]
-            else 
-                return random.choice(moves)
+            return [-1,1]
         if cy > yLh:
             #return downleft
-            if [-1,-1] in moves:
-                return [-1,-1]
-            else 
-                return random.choice(moves)
+            return [-1,-1]
         if cy == yLh:
             #return left
-            if [-1,0] in moves:
-                return [-1,0]
-            else 
-                return random.choice(moves)
+            return [-1,0]
     if cx == xLh:
         if cy < yLh:
             #return up
-            if [0,1] in moves:
-                return [0,1]
-            else 
-                return random.choice(moves)
+            return [0,1]
         if cy > yLh:
             #return down
-            if [0,-1] in moves:
-                return [0,-1]
-            else 
-                return random.choice(moves)
+            return [0,-1]
+
+    return [2,2]
 
 def chooseLighthouse(self, lighthouses, cx, cy):
     betterManhattan = 9999
@@ -121,7 +97,13 @@ class RandBot(interface.Bot):
             allLh.append(lh)
         
         xLh, yLh = chooseLighthouse(self, allLh, cx, cy)
-        move = getCloserToLighthouse(self, state, xLh, yLh, cx, cy)
+        move = getCloserToLighthouse(xLh, yLh, cx, cy)
+        if move == [2,2]:
+            moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
+            # Determinar movimientos válidos
+            moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
+            move = random.choice(moves) 
+            
         return self.move(*move)
 
 if __name__ == "__main__":

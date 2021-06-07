@@ -14,81 +14,67 @@ def isAStarpossible(lighthouses, cx, cy):
     return false
 
 def getCloserToLighthouse(xLh, yLh, cx, cy):
+    moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
+    moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
     if cx < xLh:
         if cy < yLh:
             #return upright
-            if state["map"][1,1] = 1:
+            if state["view"][1,1] != -1:
                 return [1,1]
             else 
-                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
                 # Determinar movimientos válidos
-                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
                 return random.choice(moves)
         if cy > yLh:
             #return downright
-            if state["map"][1,-1] = 1:
+            if state["view"][1,-1] != -1:
                 return [1,-1]
             else 
-                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
                 # Determinar movimientos válidos
-                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
                 return random.choice(moves)
         if cy == yLh:
             #return right
-            if state["map"][1,0] = 1:
+            if state["view"][1,0] != -1:
                 return [1,0]
             else 
-                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
                 # Determinar movimientos válidos
-                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
                 return random.choice(moves)
     if cx > xLh:
         if cy < yLh:
             #return upleft
-            if state["map"][-1,1] = 1:
+            if state["view"][-1,1] != -1:
                 return [-1,1]
             else 
-                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
                 # Determinar movimientos válidos
-                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
                 return random.choice(moves)
         if cy > yLh:
             #return downleft
-            if state["map"][-1,-1] = 1:
+            if state["view"][-1,-1] != -1:
                 return [-1,-1]
             else 
-                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
                 # Determinar movimientos válidos
-                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
                 return random.choice(moves)
         if cy == yLh:
             #return left
-            if state["map"][-1,0] = 1:
+            if state["view"][-1,0] != -1:
                 return [-1,0]
             else 
-                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
                 # Determinar movimientos válidos
-                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
                 return random.choice(moves)
     if cx == xLh:
         if cy < yLh:
             #return up
-            if state["map"][0,1] = 1:
+            if state["view"][0,1] != -1:
                 return [0,1]
             else 
-                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
                 # Determinar movimientos válidos
-                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
                 return random.choice(moves)
         if cy > yLh:
             #return down
             return [0,-1]
-            if state["map"][0,-1] = 1:
+            if state["view"][0,-1] != -1:
                 return [0,-1]
             else 
-                moves = ((-1,-1),(-1,0),(-1,1),(0,-1),(0,1),(1,-1),(1,0),(1,1))
                 # Determinar movimientos válidos
-                moves = [(x,y) for x,y in moves if self.map[cy+y][cx+x]]
                 return random.choice(moves)
 
 def chooseLighthouse(self, lighthouses, cx, cy):

@@ -1,5 +1,6 @@
 # The Hateful Bot
-Bot realizado para la asignatura de Sistemas Inteligentes.
+Bot realizado para la asignatura de Sistemas Inteligentes, asignatura impartida por Iñigo López-Gazpio en la Universidad de Deusto.
+
 ![thehateFulBot](https://raw.githubusercontent.com/javieulate/lighthousesHateFul/master/thehateFulBot.png)
 
 ## Pasos para la ejecución
@@ -22,7 +23,7 @@ En el siguiente [enlace](https://drive.google.com/file/d/1qoWKu9wkKlKaZ6XxCik-LM
 
 ## Documentación
 
-Para acceder a una documentación explayada acerca del bot implementado pinche [aquí](https://raw.githubusercontent.com/javieulate/lighthousesHateFul/master/Entrega%20Final%20-%20LightHouses%20-%20The%20Hateful%20Four.pdf)
+Para descargar una documentación explayada acerca del bot implementado pinche [aquí](https://raw.githubusercontent.com/javieulate/lighthousesHateFul/master/Entrega%20Final%20-%20LightHouses%20-%20The%20Hateful%20Four.pdf).
 
 ## Contribuidores
 
